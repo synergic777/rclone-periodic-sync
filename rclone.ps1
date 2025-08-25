@@ -1,5 +1,5 @@
 while ($true) {
-    $files = Get-ChildItem "$env:USERPROFILE\Videos" -File
+    $files = Get-ChildItem "$env:USERPROFILE\Videos\Captures" -File
 
     foreach ($file in $files) {
         # Copy single file
