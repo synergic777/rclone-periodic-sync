@@ -31,6 +31,6 @@ while ($true) {
         Write-Host "`nBatch complete. Processed $($files.Count) file(s)." -ForegroundColor Magenta
     }
     
-    Write-Host "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - Waiting 5 minutes before next check...`n" -ForegroundColor Cyan
-    Start-Sleep -Seconds 300
+    Write-Host "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - Waiting before next check...`n" -ForegroundColor Cyan
+    Start-Sleep -Seconds 10
 }
