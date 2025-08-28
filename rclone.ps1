@@ -21,14 +21,9 @@ while ($true) {
             Write-Host "`nProcessing: $relativePath" -ForegroundColor White
             Write-Host "Uploading to Google Drive..." -ForegroundColor Blue
             
-            # Determine destination path on Google Drive
-            if ($relativeDir) {
-                $gdrivePath = "gdrive:PC-Videos/$relativeDir"
-                Write-Host "Destination: PC-Videos/$relativeDir" -ForegroundColor Gray
-            } else {
-                $gdrivePath = "gdrive:PC-Videos"
-                Write-Host "Destination: PC-Videos (root)" -ForegroundColor Gray
-            }
+            # All files go to the same destination folder regardless of source subfolder
+            $gdrivePath = "gdrive:Captures"
+            Write-Host "Destination: Captures" -ForegroundColor Gray
             
             # Copy single file to preserve folder structure
             rclone copy "$($file.FullName)" "$gdrivePath" --progress --bwlimit 1.25M
